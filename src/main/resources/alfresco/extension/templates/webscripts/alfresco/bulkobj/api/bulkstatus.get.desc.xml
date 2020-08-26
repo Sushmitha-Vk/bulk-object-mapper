@@ -1,0 +1,9 @@
+<webscript>
+    <shortname>Bulk Status</shortname>
+    <description>Get Status of Background Bulk Operations</description>
+    <url>/bulkobj/stats</url>
+    <url>/bulkobj/stat/{uuid}</url>
+    <authentication>admin</authentication>
+    <format default="json"></format>
+    <family>Bulk Object Mapper</family>
+</webscript>

@@ -1,0 +1,8 @@
+<webscript>
+    <shortname>Remove Objects</shortname>
+    <description>Remove Objects from database</description>
+    <url>/bulkobj/removeItems</url>
+    <authentication>admin</authentication>
+    <format default="json"></format>
+    <family>Bulk Object Mapper</family>
+</webscript>

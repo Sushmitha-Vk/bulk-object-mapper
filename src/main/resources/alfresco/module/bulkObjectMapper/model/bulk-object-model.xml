@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="bulkobj:contentModel" xmlns="http://www.alfresco.org/model/dictionary/1.0">
+
+    <!-- Optional meta-data about the model -->
+    <description>Bulk Object Mapper Model</description>
+    <author>My Name</author>
+    <version>1.0</version>
+
+    <imports>
+        <!-- Import Alfresco Dictionary Definitions -->
+        <import uri="http://www.alfresco.org/model/dictionary/1.0" prefix="d"/>
+        <!-- Import Alfresco Content Domain Model Definitions -->
+        <import uri="http://www.alfresco.org/model/content/1.0" prefix="cm"/>
+        <!-- Import Alfresco System Model Definitions -->
+        <import uri="http://www.alfresco.org/model/system/1.0" prefix="sys"/>
+    </imports>
+
+    <!-- Custom namespace for the ACME company -->
+    <namespaces>
+        <namespace uri="http://www.alfresco.org/model/consulting/bulkobject/1.0" prefix="bulkobj"/>
+    </namespaces>
+
+    <constraints>
+    </constraints>
+
+    <!-- ===============================================================================================================
+        Constraints, Types, and Aspects go here...
+    -->
+
+    <types>
+		<type name="bulkobj:importManifest">
+			<title>Import Manifest</title>
+            <parent>cm:content</parent>
+			<properties>
+				<property name="bulkobj:manifestRunId">
+					<title>Manifest Run ID</title>
+					<type>d:text</type>
+		            <protected>false</protected>
+		            <multiple>false</multiple>
+		            <index enabled="true" />
+				</property>
+				<property name="bulkobj:manifestGrouoId">
+					<title>Manifest Run ID</title>
+					<type>d:text</type>
+		            <protected>false</protected>
+		            <multiple>false</multiple>
+		            <index enabled="true" />
+				</property>
+				<property name="bulkobj:objectCount">
+					<title>Object Count</title>
+					<type>d:int</type>
+		            <protected>false</protected>
+		            <multiple>false</multiple>
+		            <index enabled="true" />
+				</property>
+			</properties>
+		</type>
+    </types>
+
+	<aspects>
+		<aspect name="bulkobj:missingContent">
+			<title>Missing Content</title>
+			<properties>
+				<property name="bulkobj:missingContentInfo">
+					<title>Hanging URL Info</title>
+					<type>d:text</type>
+		            <protected>false</protected>
+		            <multiple>true</multiple>
+		            <index enabled="false" />
+				</property>
+			</properties>
+		</aspect>
+		<aspect name="bulkobj:renamedContentUrl">
+			<title>Matter</title>
+			<properties>
+				<property name="bulkobj:originalContentUrl">
+					<title>Renamed URL Info</title>
+					<type>d:text</type>
+		            <protected>false</protected>
+		            <multiple>true</multiple>
+		            <index enabled="false" />
+				</property>
+				<property name="bulkobj:urlRenameReason">
+					<title>Reason for renaming the Content Url</title>
+					<type>d:text</type>
+		            <protected>false</protected>
+		            <multiple>false</multiple>
+		            <index enabled="false" />
+				</property>
+			</properties>
+		</aspect>
+		<aspect name="bulkobj:renamedObject">
+			<title>Renamed Object</title>
+			<properties>
+				<property name="bulkobj:originalName">
+					<title>Original Name</title>
+					<type>d:text</type>
+		            <protected>false</protected>
+		            <multiple>false</multiple>
+		            <index enabled="false" />
+				</property>
+				<property name="bulkobj:renameReason">
+					<title>Reason for renaming the object</title>
+					<type>d:text</type>
+		            <protected>false</protected>
+		            <multiple>false</multiple>
+		            <index enabled="false" />
+				</property>
+			</properties>
+		</aspect>
+		<aspect name="bulkobj:orphanedObject">
+		</aspect>
+		<aspect name="bulkobj:importedObject">
+			<title>Imported Object</title>
+			<properties>
+				<property name="bulkobj:runId">
+					<title>Import Object Run Id</title>
+					<type>d:text</type>
+		            <protected>false</protected>
+		            <multiple>false</multiple>
+		            <index enabled="true">
+		               <facetable>true</facetable>
+		            </index>
+				</property>
+				<property name="bulkobj:groupId">
+					<title>Import Object Group Id</title>
+					<type>d:text</type>
+		            <protected>false</protected>
+		            <multiple>false</multiple>
+		            <index enabled="true">
+		               <facetable>true</facetable>
+		            </index>
+				</property>
+				<property name="bulkobj:itemId">
+					<title>Import Object Item Id</title>
+					<type>d:text</type>
+		            <protected>false</protected>
+		            <multiple>false</multiple>
+		            <index enabled="true" />
+				</property>
+			</properties>
+		</aspect>
+	</aspects>
+</model>

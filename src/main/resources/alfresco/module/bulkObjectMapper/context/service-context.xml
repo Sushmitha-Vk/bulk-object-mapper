@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!--
+	Licensed to the Apache Software Foundation (ASF) under one or more
+	contributor license agreements.  See the NOTICE file distributed with
+	this work for additional information regarding copyright ownership.
+	The ASF licenses this file to You under the Apache License, Version 2.0
+	(the "License"); you may not use this file except in compliance with
+	the License.  You may obtain a copy of the License at
+	
+	http://www.apache.org/licenses/LICENSE-2.0
+	
+	Unless required by applicable law or agreed to in writing, software
+	distributed under the License is distributed on an "AS IS" BASIS,
+	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	See the License for the specific language governing permissions and
+	limitations under the License.
+-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+          http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+          http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd">
+          
+	<util:properties id="alfrescoProperties" location="classpath:alfresco-global.properties" />
+   	
+    <bean id="bulkobj.BulkUpdaterThreadPoolImpl" class="org.alfresco.consulting.accelerator.bulk.impl.BulkUpdaterThreadPoolImpl">
+		<property name="serviceRegistry" ref="ServiceRegistry" />
+		<property name="defaultPoolSize" value="${bulk.object.default.pool_size}" />
+		<property name="defaultBatchSize" value="${bulk.object.default.batch_size}" />
+    </bean>
+    
+	<bean id="bulkobj.OverridingVersionLabelPolicy" class="org.alfresco.consulting.accelerator.bulk.impl.OverridingVersionLabelPolicy">
+	</bean>
+	<!-- Override bean -->
+    <bean id="registerContentWithVersionService" class="org.alfresco.repo.version.VersionServiceVersionLabelRegistrationBean" init-method="register">
+       <property name="versionService">
+            <ref bean="versionService" />
+        </property>
+        <property name="namespacePrefixResolver">
+            <ref bean="namespaceService" />
+        </property>
+        <property name="typeQName">
+            <value>cm:content</value>
+        </property>
+        <property name="policy">
+             <ref bean="bulkobj.OverridingVersionLabelPolicy" />
+        </property>
+    </bean>
+    <bean id="bulkobj.BulkObjectMapperComponent" class="org.alfresco.consulting.accelerator.bulk.impl.BulkObjectMapperComponent">
+		<property name="serviceRegistry" ref="ServiceRegistry" />
+		<property name="bulkUpdater" ref="bulkobj.BulkUpdaterThreadPoolImpl" />
+		<property name="backgroundCache" ref="bgRunner.BackgroundCache" />
+		<property name="backgroundRunner" ref="bgRunner.BackgroundRunner" />
+ 		<property name="urlCheckMode" value="${bulk.object.content.url.check.mode}" />
+		<property name="behaviourFilter" ref="policyBehaviourFilter" />
+		<property name="regionId" value="${s3.bucketLocation}" />
+		<property name="s3bucket" value="${s3.bucketName}" />
+		<property name="kmsKey" value="${s3.awsKmsKeyId}" />
+		<property name="folderHierarchyHelper" ref="alfresco-consulting-repo-utils.folderHierarchyHelper" />
+		<!--  property name="overridingVersionLabelPolicy" ref="bulkobj.OverridingVersionLabelPolicy" / -->
+    </bean>
+
+    <bean id="bulkobj.BulkObjectMapperService" class="org.alfresco.consulting.accelerator.bulk.impl.BulkObjectMapperServiceImpl">
+		<property name="serviceRegistry" ref="ServiceRegistry" />
+		<property name="bulkObjectMapperComponent" ref="bulkobj.BulkObjectMapperComponent" />
+    </bean>
+    
+    <bean id="bulkobj.BulkObjectMapperConstants" class="org.alfresco.consulting.accelerator.bulk.BulkObjectMapperConstants">
+		<property name="uri" value="${bulk.object.namespaceUri}" />
+    </bean>
+    
+    <bean id="bulkobj.BulkObjectMapperScriptApi" class="org.alfresco.consulting.accelerator.bulk.jscript.BulkObjectMapperScriptApi" parent="baseJavaScriptExtension">
+        <property name="extensionName" value="bulkobj" />
+		<property name="serviceRegistry" ref="ServiceRegistry" />
+		<property name="bulkObjectMapperService" ref="bulkobj.BulkObjectMapperService" />
+		<property name="backgroundCache" ref="bgRunner.BackgroundCache" />
+    </bean>
+
+	<bean id="bulkobj.BulkUpdateContentPolicy"
+		class="org.alfresco.consulting.accelerator.bulk.impl.BulkUpdateContentPolicy"
+		init-method="initialise" depends-on="bulkobj.dictionaryBootstrap">
+		<property name="bulkObjectMapperService" ref="bulkobj.BulkObjectMapperService" />
+		<property name="policyComponent" ref="policyComponent" />
+		<property name="serviceRegistry" ref="ServiceRegistry" />
+	</bean>
+	
+	<bean id="bulkobj-cmdproc-base" abstract="true" init-method="init">
+		<property name="serviceRegistry" ref="ServiceRegistry" />
+		<property name="bulkObjectMapperComponent" ref="bulkobj.BulkObjectMapperComponent" />
+	</bean>
+	
+	<bean id="bulkobj-bulkFilter-base" abstract="true" init-method="init">
+		<property name="serviceRegistry" ref="ServiceRegistry" />
+		<property name="bulkObjectMapperComponent" ref="bulkobj.BulkObjectMapperComponent" />
+	</bean>
+	<bean id="bulkobj.DebugCommand" parent="bulkobj-cmdproc-base" class="org.alfresco.consulting.accelerator.bulk.cmd.DebugCommand">
+    </bean>
+	<bean id="bulkobj.DeleteCommand" parent="bulkobj-cmdproc-base" class="org.alfresco.consulting.accelerator.bulk.cmd.DeleteCommand">
+    </bean>
+    <bean id="alfresco-consulting-repo-utils.folderHierarchyHelper" class="org.alfresco.consulting.util.folder_hierarchy.impl.FolderHierarchyHelperImpl">
+        <property name="serviceRegistry">
+            <ref bean="ServiceRegistry"/>
+        </property>
+    </bean>
+    <bean id="alfresco-consulting-repo-utils.bulkUpdater" class="org.alfresco.consulting.util.transactions.impl.BulkUpdaterImpl">
+        <property name="serviceRegistry">
+            <ref bean="ServiceRegistry"/>
+        </property>
+    </bean><bean id="alfresco-consulting-repo-utils.fileFolderWalker" class="org.alfresco.consulting.util.tree_walker.impl.FileFolderTreeWalker">
+        <property name="serviceRegistry">
+            <ref bean="ServiceRegistry"/>
+        </property>
+    </bean>
+      <bean id="alfresco-consulting-repo-utils.fullTreeWalker" class="org.alfresco.consulting.util.tree_walker.impl.FullTreeWalker">
+        <property name="serviceRegistry">
+            <ref bean="ServiceRegistry"/>
+        </property>
+    </bean>
+    <!-- A simple class that is initialized by Spring -->
+    <bean id="bgRunner.BackgroundRunner" class="org.alfresco.consulting.accelerator.bgrun.impl.BackgroundRunnerImpl"  />
+
+    <bean id="bgRunner.BackgroundCache" class="org.alfresco.consulting.accelerator.bgrun.impl.InMemBgCacheWithPersistence">
+		<property name="serviceRegistry" ref="ServiceRegistry" />
+    </bean>
+</beans>

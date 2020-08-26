@@ -1,0 +1,196 @@
+[[1;34mINFO[m] Scanning for projects...
+[[1;33mWARNING[m] The project org.alfresco.consulting.accelerator:bulkObjectMapper:pom:1.0-SNAPSHOT uses prerequisites which is only intended for maven-plugin projects but not for non maven-plugin projects. For such purposes you should use the maven-enforcer-plugin. See https://maven.apache.org/enforcer/enforcer-rules/requireMavenVersion.html
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1mReactor Build Order:[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] AIO - SDK 4.0                                                      [pom]
+[[1;34mINFO[m] Alfresco Platform/Repository JAR Module                            [jar]
+[[1;34mINFO[m] Alfresco Share JAR Module                                          [jar]
+[[1;34mINFO[m] Integration Tests Module                                           [jar]
+[[1;34mINFO[m] Alfresco Platform/Repository Docker Module                         [jar]
+[[1;34mINFO[m] Alfresco Share Docker Module                                       [jar]
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--------< [0;36morg.alfresco.consulting.accelerator:bulkObjectMapper[0;1m >--------[m
+[[1;34mINFO[m] [1mBuilding AIO - SDK 4.0 1.0-SNAPSHOT                                [1/6][m
+[[1;34mINFO[m] [1m--------------------------------[ pom ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mbulkObjectMapper[0;1m ---[m
+[[1;34mINFO[m] Deleting /home/dell/Documents/new-sdk-3/bulkObjectMapper/target
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.1.0:copy-resources[m [1m(copy-and-filter-docker-resources)[m @ [36mbulkObjectMapper[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 1 resource
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32myuicompressor-maven-plugin:1.5.1:compress[m [1m(compress-assembly)[m @ [36mbulkObjectMapper[0;1m ---[m
+[[1;34mINFO[m] nb warnings: 0, nb errors: 0
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32myuicompressor-maven-plugin:1.5.1:compress[m [1m(compress-resources)[m @ [36mbulkObjectMapper[0;1m ---[m
+[[1;34mINFO[m] nb warnings: 0, nb errors: 0
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mjrebel-maven-plugin:1.1.8:generate[m [1m(generate-rebel-xml)[m @ [36mbulkObjectMapper[0;1m ---[m
+[[1;34mINFO[m] Processing org.alfresco.consulting.accelerator:bulkObjectMapper with packaging pom
+[[1;33mWARNING[m] Unsupported packaging type: pom
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m---< [0;36morg.alfresco.consulting.accelerator:bulkObjectMapper-platform[0;1m >----[m
+[[1;34mINFO[m] [1mBuilding Alfresco Platform/Repository JAR Module 1.0-SNAPSHOT      [2/6][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mbulkObjectMapper-platform[0;1m ---[m
+[[1;34mINFO[m] Deleting /home/dell/Documents/new-sdk-3/bulkObjectMapper/bulkObjectMapper-platform/target
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.1.0:resources[m [1m(default-resources)[m @ [36mbulkObjectMapper-platform[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 28 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32myuicompressor-maven-plugin:1.5.1:compress[m [1m(compress-assembly)[m @ [36mbulkObjectMapper-platform[0;1m ---[m
+[[1;34mINFO[m] nb warnings: 0, nb errors: 0
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32myuicompressor-maven-plugin:1.5.1:compress[m [1m(compress-resources)[m @ [36mbulkObjectMapper-platform[0;1m ---[m
+[[1;34mINFO[m] nb warnings: 0, nb errors: 0
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mjrebel-maven-plugin:1.1.8:generate[m [1m(generate-rebel-xml)[m @ [36mbulkObjectMapper-platform[0;1m ---[m
+[[1;34mINFO[m] Processing org.alfresco.consulting.accelerator:bulkObjectMapper-platform with packaging jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.0:compile[m [1m(default-compile)[m @ [36mbulkObjectMapper-platform[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 32 source files to /home/dell/Documents/new-sdk-3/bulkObjectMapper/bulkObjectMapper-platform/target/classes
+[[1;34mINFO[m] /home/dell/Documents/new-sdk-3/bulkObjectMapper/bulkObjectMapper-platform/src/main/java/org/alfresco/consulting/accelerator/bulk/impl/BulkObjectMapperComponent.java: Some input files use or override a deprecated API.
+[[1;34mINFO[m] /home/dell/Documents/new-sdk-3/bulkObjectMapper/bulkObjectMapper-platform/src/main/java/org/alfresco/consulting/accelerator/bulk/impl/BulkObjectMapperComponent.java: Recompile with -Xlint:deprecation for details.
+[[1;34mINFO[m] /home/dell/Documents/new-sdk-3/bulkObjectMapper/bulkObjectMapper-platform/src/main/java/org/alfresco/consulting/accelerator/bulk/impl/BulkObjectMapperComponent.java: Some input files use unchecked or unsafe operations.
+[[1;34mINFO[m] /home/dell/Documents/new-sdk-3/bulkObjectMapper/bulkObjectMapper-platform/src/main/java/org/alfresco/consulting/accelerator/bulk/impl/BulkObjectMapperComponent.java: Recompile with -Xlint:unchecked for details.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.1.0:testResources[m [1m(default-testResources)[m @ [36mbulkObjectMapper-platform[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 4 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.0:testCompile[m [1m(default-testCompile)[m @ [36mbulkObjectMapper-platform[0;1m ---[m
+[[1;34mINFO[m] Nothing to compile - all classes are up to date
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.12.4:test[m [1m(default-test)[m @ [36mbulkObjectMapper-platform[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:3.1.0:jar[m [1m(default-jar)[m @ [36mbulkObjectMapper-platform[0;1m ---[m
+[[1;34mINFO[m] Building jar: /home/dell/Documents/new-sdk-3/bulkObjectMapper/bulkObjectMapper-platform/target/bulkObjectMapper-platform-1.0-SNAPSHOT.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m-----< [0;36morg.alfresco.consulting.accelerator:bulkObjectMapper-share[0;1m >-----[m
+[[1;34mINFO[m] [1mBuilding Alfresco Share JAR Module 1.0-SNAPSHOT                    [3/6][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mbulkObjectMapper-share[0;1m ---[m
+[[1;34mINFO[m] Deleting /home/dell/Documents/new-sdk-3/bulkObjectMapper/bulkObjectMapper-share/target
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.1.0:resources[m [1m(default-resources)[m @ [36mbulkObjectMapper-share[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Copying 14 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32myuicompressor-maven-plugin:1.5.1:compress[m [1m(compress-assembly)[m @ [36mbulkObjectMapper-share[0;1m ---[m
+[[1;34mINFO[m] nb warnings: 0, nb errors: 0
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32myuicompressor-maven-plugin:1.5.1:compress[m [1m(compress-resources)[m @ [36mbulkObjectMapper-share[0;1m ---[m
+[[1;34mINFO[m] TemplateWidget.js (721b) -> TemplateWidget-min.js (415b)[57%]
+[[1;34mINFO[m] total input (721b) -> output (415b)[57%]
+[[1;34mINFO[m] nb warnings: 0, nb errors: 0
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mjrebel-maven-plugin:1.1.8:generate[m [1m(generate-rebel-xml)[m @ [36mbulkObjectMapper-share[0;1m ---[m
+[[1;34mINFO[m] Processing org.alfresco.consulting.accelerator:bulkObjectMapper-share with packaging jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.0:compile[m [1m(default-compile)[m @ [36mbulkObjectMapper-share[0;1m ---[m
+[[1;34mINFO[m] Nothing to compile - all classes are up to date
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.1.0:testResources[m [1m(default-testResources)[m @ [36mbulkObjectMapper-share[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /home/dell/Documents/new-sdk-3/bulkObjectMapper/bulkObjectMapper-share/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.0:testCompile[m [1m(default-testCompile)[m @ [36mbulkObjectMapper-share[0;1m ---[m
+[[1;34mINFO[m] Nothing to compile - all classes are up to date
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.12.4:test[m [1m(default-test)[m @ [36mbulkObjectMapper-share[0;1m ---[m
+[[1;34mINFO[m] No tests to run.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:3.1.0:jar[m [1m(default-jar)[m @ [36mbulkObjectMapper-share[0;1m ---[m
+[[1;34mINFO[m] Building jar: /home/dell/Documents/new-sdk-3/bulkObjectMapper/bulkObjectMapper-share/target/bulkObjectMapper-share-1.0-SNAPSHOT.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--< [0;36morg.alfresco.consulting.accelerator:bulkObjectMapper-integration-tests[0;1m >--[m
+[[1;34mINFO[m] [1mBuilding Integration Tests Module 1.0-SNAPSHOT                     [4/6][m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mbulkObjectMapper-integration-tests[0;1m ---[m
+[[1;34mINFO[m] Deleting /home/dell/Documents/new-sdk-3/bulkObjectMapper/bulkObjectMapper-integration-tests/target
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.1.0:resources[m [1m(default-resources)[m @ [36mbulkObjectMapper-integration-tests[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /home/dell/Documents/new-sdk-3/bulkObjectMapper/bulkObjectMapper-integration-tests/src/main/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32myuicompressor-maven-plugin:1.5.1:compress[m [1m(compress-assembly)[m @ [36mbulkObjectMapper-integration-tests[0;1m ---[m
+[[1;34mINFO[m] nb warnings: 0, nb errors: 0
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32myuicompressor-maven-plugin:1.5.1:compress[m [1m(compress-resources)[m @ [36mbulkObjectMapper-integration-tests[0;1m ---[m
+[[1;34mINFO[m] nb warnings: 0, nb errors: 0
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mjrebel-maven-plugin:1.1.8:generate[m [1m(generate-rebel-xml)[m @ [36mbulkObjectMapper-integration-tests[0;1m ---[m
+[[1;34mINFO[m] Processing org.alfresco.consulting.accelerator:bulkObjectMapper-integration-tests with packaging jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.0:compile[m [1m(default-compile)[m @ [36mbulkObjectMapper-integration-tests[0;1m ---[m
+[[1;34mINFO[m] Nothing to compile - all classes are up to date
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.1.0:testResources[m [1m(default-testResources)[m @ [36mbulkObjectMapper-integration-tests[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /home/dell/Documents/new-sdk-3/bulkObjectMapper/bulkObjectMapper-integration-tests/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.8.0:testCompile[m [1m(default-testCompile)[m @ [36mbulkObjectMapper-integration-tests[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 3 source files to /home/dell/Documents/new-sdk-3/bulkObjectMapper/bulkObjectMapper-integration-tests/target/test-classes
+[[1;34mINFO[m] -------------------------------------------------------------
+[[1;31mERROR[m] COMPILATION ERROR : 
+[[1;34mINFO[m] -------------------------------------------------------------
+[[1;31mERROR[m] /home/dell/Documents/new-sdk-3/bulkObjectMapper/bulkObjectMapper-integration-tests/src/test/java/org/alfresco/consulting/accelerator/platformsample/DemoComponentIT.java:[47,9] cannot find symbol
+  symbol:   class DemoComponent
+  location: class org.alfresco.consulting.accelerator.platformsample.DemoComponentIT
+[[1;31mERROR[m] /home/dell/Documents/new-sdk-3/bulkObjectMapper/bulkObjectMapper-integration-tests/src/test/java/org/alfresco/consulting/accelerator/platformsample/DemoComponentIT.java:[47,40] cannot find symbol
+  symbol:   class DemoComponent
+  location: class org.alfresco.consulting.accelerator.platformsample.DemoComponentIT
+[[1;31mERROR[m] /home/dell/Documents/new-sdk-3/bulkObjectMapper/bulkObjectMapper-integration-tests/src/test/java/org/alfresco/consulting/accelerator/platformsample/DemoComponentIT.java:[57,9] cannot find symbol
+  symbol:   class DemoComponent
+  location: class org.alfresco.consulting.accelerator.platformsample.DemoComponentIT
+[[1;31mERROR[m] /home/dell/Documents/new-sdk-3/bulkObjectMapper/bulkObjectMapper-integration-tests/src/test/java/org/alfresco/consulting/accelerator/platformsample/DemoComponentIT.java:[57,40] cannot find symbol
+  symbol:   class DemoComponent
+  location: class org.alfresco.consulting.accelerator.platformsample.DemoComponentIT
+[[1;34mINFO[m] 4 errors 
+[[1;34mINFO[m] -------------------------------------------------------------
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1mReactor Summary for AIO - SDK 4.0 1.0-SNAPSHOT:[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] AIO - SDK 4.0 ...................................... [1;32mSUCCESS[m [  0.386 s]
+[[1;34mINFO[m] Alfresco Platform/Repository JAR Module ............ [1;32mSUCCESS[m [  2.809 s]
+[[1;34mINFO[m] Alfresco Share JAR Module .......................... [1;32mSUCCESS[m [  0.377 s]
+[[1;34mINFO[m] Integration Tests Module ........................... [1;31mFAILURE[m [  0.246 s]
+[[1;34mINFO[m] Alfresco Platform/Repository Docker Module ......... [1;33mSKIPPED[m
+[[1;34mINFO[m] Alfresco Share Docker Module ....................... [1;33mSKIPPED[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;31mBUILD FAILURE[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time:  3.992 s
+[[1;34mINFO[m] Finished at: 2019-10-15T12:39:01+05:30
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;31mERROR[m] Failed to execute goal [32morg.apache.maven.plugins:maven-compiler-plugin:3.8.0:testCompile[m [1m(default-testCompile)[m on project [36mbulkObjectMapper-integration-tests[m: [1;31mCompilation failure[m: Compilation failure: 
+[[1;31mERROR[m] /home/dell/Documents/new-sdk-3/bulkObjectMapper/bulkObjectMapper-integration-tests/src/test/java/org/alfresco/consulting/accelerator/platformsample/DemoComponentIT.java:[47,9] cannot find symbol
+[[1;31mERROR[m]   symbol:   class DemoComponent
+[[1;31mERROR[m]   location: class org.alfresco.consulting.accelerator.platformsample.DemoComponentIT
+[[1;31mERROR[m] /home/dell/Documents/new-sdk-3/bulkObjectMapper/bulkObjectMapper-integration-tests/src/test/java/org/alfresco/consulting/accelerator/platformsample/DemoComponentIT.java:[47,40] cannot find symbol
+[[1;31mERROR[m]   symbol:   class DemoComponent
+[[1;31mERROR[m]   location: class org.alfresco.consulting.accelerator.platformsample.DemoComponentIT
+[[1;31mERROR[m] /home/dell/Documents/new-sdk-3/bulkObjectMapper/bulkObjectMapper-integration-tests/src/test/java/org/alfresco/consulting/accelerator/platformsample/DemoComponentIT.java:[57,9] cannot find symbol
+[[1;31mERROR[m]   symbol:   class DemoComponent
+[[1;31mERROR[m]   location: class org.alfresco.consulting.accelerator.platformsample.DemoComponentIT
+[[1;31mERROR[m] /home/dell/Documents/new-sdk-3/bulkObjectMapper/bulkObjectMapper-integration-tests/src/test/java/org/alfresco/consulting/accelerator/platformsample/DemoComponentIT.java:[57,40] cannot find symbol
+[[1;31mERROR[m]   symbol:   class DemoComponent
+[[1;31mERROR[m]   location: class org.alfresco.consulting.accelerator.platformsample.DemoComponentIT
+[[1;31mERROR[m] -> [1m[Help 1][m
+[[1;31mERROR[m] 
+[[1;31mERROR[m] To see the full stack trace of the errors, re-run Maven with the [1m-e[m switch.
+[[1;31mERROR[m] Re-run Maven using the [1m-X[m switch to enable full debug logging.
+[[1;31mERROR[m] 
+[[1;31mERROR[m] For more information about the errors and possible solutions, please read the following articles:
+[[1;31mERROR[m] [1m[Help 1][m http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[[1;31mERROR[m] 
+[[1;31mERROR[m] After correcting the problems, you can resume the build with the command
+[[1;31mERROR[m]   [1mmvn <goals> -rf :bulkObjectMapper-integration-tests[m

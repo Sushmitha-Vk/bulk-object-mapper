@@ -1,0 +1,9 @@
+<webscript>
+    <shortname>Map Objects</shortname>
+    <description>Create Objects Based Upon JSON Manifest</description>
+    <url>/bulkobj/mapobjects/{uuid}</url>
+    <url>/bulkobj/mapobjects</url>
+    <authentication>user</authentication>
+    <format default="json"></format>
+    <family>Bulk Object Mapper</family>
+</webscript>

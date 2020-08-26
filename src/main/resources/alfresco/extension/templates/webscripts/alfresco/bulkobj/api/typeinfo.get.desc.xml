@@ -1,0 +1,8 @@
+<webscript>
+    <shortname>Get Type Info</shortname>
+    <description>Get Full Type Info</description>
+    <url>/bulkobj/typeinfo/{typename}</url>
+    <authentication>user</authentication>
+    <format default="json">extension</format>
+    <family>Bulk Object Mapper</family>
+</webscript>

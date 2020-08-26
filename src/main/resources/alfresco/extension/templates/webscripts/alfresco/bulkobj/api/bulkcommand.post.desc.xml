@@ -1,0 +1,8 @@
+<webscript>
+    <shortname>Bulk Command</shortname>
+    <description>Execute Bulk Command</description>
+    <url>/bulkobj/cmd</url>
+    <authentication>admin</authentication>
+    <format default="json"></format>
+    <family>Bulk Object Mapper</family>
+</webscript>

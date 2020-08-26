@@ -1,0 +1,8 @@
+<webscript>
+    <shortname>Check Objects</shortname>
+    <description>Updates Objects that have been mapped in to attach content</description>
+    <url>/bulkobj/checkobjects</url>
+    <authentication>user</authentication>
+    <format default="json"></format>
+    <family>Bulk Object Mapper</family>
+</webscript>
